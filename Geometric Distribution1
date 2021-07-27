@@ -1,0 +1,8 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+n1=list(map(int,input().split()))
+x=int(input())
+p=(n1[0]/n1[1])
+q=1-p
+Px=pow(1-p,x-1)*p
+print(format(Px,".3f")
