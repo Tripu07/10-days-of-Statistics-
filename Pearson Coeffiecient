@@ -1,0 +1,22 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+n=int(input())
+x=list(map(float,input().split()))
+y=list(map(float,input().split()))
+l1=[]
+Mean1=sum(x)/n
+Mean2=sum(y)/n
+S1=[pow((i-Mean1),2) for i in x]
+L2=math.sqrt(sum(S1))
+sd1=L2/math.sqrt(n)
+S2=[pow((i-Mean2),2) for i in y]
+L3=math.sqrt(sum(S2))
+sd2=L3/math.sqrt(n)
+l4=[]
+for i in range(n):
+    X=(x[i]-Mean1)*(y[i]-Mean2)
+    l4.append(X)
+f=sum(l4)
+f1=n*sd1*sd2
+Pc=f/f1
+print(format(Pc,".3f"))
