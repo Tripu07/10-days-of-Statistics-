@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUTM
+m=list(map(float,input().split()))
+#now we need to calculate expected value of x^2
+var1=m[0]
+var2=m[1]
+Ex1=var1+ pow(var1,2)
+Ex2=var2+pow(var2,2)
+Ca1=160+40*Ex1
+Ca2=128+40*Ex2
+print(format(Ca1,".3f"))
+print(format(Ca2,".3f"))
