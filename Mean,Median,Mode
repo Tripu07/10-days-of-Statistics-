@@ -1,0 +1,36 @@
+from collections import OrderedDict
+from statistics import *
+from numpy import *
+n=int(input())
+x=list(map(int,input().split()))
+a1=array(x)
+Mean=mean(x)
+x.sort()
+p=len(x)
+l3=[]
+if(p%2==0):
+    Median=(x[p//2]+ x[(p//2) -1])/2
+else:
+    Median=(x[(p-1)//2])
+def findMode(a,n):
+    sorted(a)
+    numbers = dict()
+    for item in a:
+        if item not in numbers:
+            numbers[item] = 1
+        else:
+            numbers[item] = numbers[item] + 1
+    max_count = 0
+    for key in numbers:
+        if numbers[key] > max_count:
+            max_count = numbers[key]
+    max_modal_elements = []
+    for key in numbers:
+        if numbers[key] == max_count:
+            max_modal_elements.append(key)
+    mode = min(max_modal_elements)
+    return int(mode)
+mode = findMode(x,n)
+print(Mean)
+print(Median)
+print(mode)
