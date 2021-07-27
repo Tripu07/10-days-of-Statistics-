@@ -1,0 +1,40 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+from numpy import *
+x=list(map(int,input().split()))
+k=x[0]
+l1=[]
+for i in range(x[1]):
+    z=list(map(float,input().split()))
+    l1.append(z)
+n=int(input())
+l5=[]
+for  i in range(n):
+    m=list(map(float,input().split()))
+    l5.append(m)  
+a1=[l1[i][0:k] for i in range(len(l1))]
+a2=[[l1[i][x[0]]] for i in range(len(l1))]
+for i in range(len(a1)):
+    a1[i].insert(0,1)
+x1=array(a1)
+x2=array(a2)
+x3=transpose(x1)
+X=matrix(x1)
+Y=matrix(x2)
+XT=matrix(x3)
+p1=XT*X
+p2=linalg.inv(p1)
+p3=XT*Y
+B=p2*p3
+l6=[]
+for i in range(len(l5)):
+    l5[i].insert(0,1)
+for i in range(len(l5)):
+    E=array(l5[i])
+    p=matrix(E)
+    g=p*B
+    l6.append(g)
+l7=array(l6)
+#l8=list(l7)
+for i in range(len(l7)):
+    print(round(l7[i][0][0],2))
