@@ -1,0 +1,25 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+l1=[]
+for i in range(5):
+    x=list(map(int,input().split()))
+    l1.append(x)
+M1=[l1[i][0] for i in range(5)]
+M2=[l1[i][1] for i in range(5)]
+mean1=sum(M1)/5
+mean2=sum(M2)/5
+S1=[pow((M1[i]-mean1),2) for i in range(5)]
+S2=[pow((M2[i]-mean2),2) for i in range(5)]
+sd1=(pow(sum(S1),1/2))/math.sqrt(5)
+sd2=(pow(sum(S2),1/2))/math.sqrt(5)
+l5=[]
+for i in range(5):
+    z=(M1[i]-mean1)*(M2[i]-mean2)
+    l5.append(z)
+S=sum(l5)
+R=sd1*sd2*5
+Pc=S/R
+b=Pc*(sd2/sd1)
+a=mean2-b*mean1
+y=a+b*80
+print(round(y,3))
