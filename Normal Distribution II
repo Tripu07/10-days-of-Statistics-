@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+data=list(map(int,input().split()))
+x1=int(input())
+x2=int(input())
+a1=(x1-data[0])/(data[1]*math.sqrt(2))
+a2=(x2-data[0])/(data[1]*math.sqrt(2))
+Px1=(1-(0.5*(1+math.erf(a1))))*100
+Px2=(1-(0.5*(1+math.erf(a2))))*100
+Px3=(0.5*(1+math.erf(a2)))*100
+print(format(Px1,".2f"))
+print(format(Px2,".2f"))
+print(format(Px3,".2f"))
+
