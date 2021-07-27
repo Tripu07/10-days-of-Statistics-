@@ -1,0 +1,10 @@
+import math
+n=int(input())
+mean2=int(input())
+sd2=int(input())
+Px=float(input())
+z=float(input())
+A=(mean2*math.sqrt(n)-(z*sd2))/(math.sqrt(n))
+B=(mean2*math.sqrt(n)+(z*sd2))/math.sqrt(n)
+print(format(A,".2f"))
+print(format(B,".2f")
