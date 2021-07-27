@@ -1,0 +1,13 @@
+n=int(input())
+x=list(map(float,input().split()))
+y=list(map(float,input().split()))
+l1=sorted(x)
+l2=sorted(y)
+l3=[ l1.index(i)+1 for i in x]
+l4=[ l2.index(i)+1 for i in y]
+l5=[pow(l3[i]-l4[i],2) for i in range(n)]
+Sum=sum(l5)
+N=n*(pow(n,2)-1)
+r=6*(Sum/N)
+Rxy=1-r
+print(format(Rxy,".3f"))
