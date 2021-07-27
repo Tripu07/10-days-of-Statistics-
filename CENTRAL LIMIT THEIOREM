@@ -1,0 +1,10 @@
+import math 
+n=int(input())
+x=int(input())
+Mean=int(input())
+sd=int(input())
+Mean1=Mean*x
+sd1=math.sqrt(x)*sd
+X=(n-Mean1)/(sd1*math.sqrt(2))
+Px=(0.5*(1+ math.erf(X)))
+print(format(Px,".4f"))
