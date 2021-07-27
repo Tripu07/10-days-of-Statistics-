@@ -1,0 +1,52 @@
+#!/bin/python
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'quartiles' function below.
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def quartiles(arr):
+    p=len(arr)
+    arr.sort()
+    l2=[]
+    l3=[]
+    if(p%2!=0):
+        l2=arr[0:(p-1)//2]
+        l3=arr[(p+1)//(2):p]
+        Q2=arr[(p-1)//2]
+    else:
+        l2=arr[0:p//2]
+        l3=arr[p//2:p]
+        Q2=(arr[(p//2)-1] + arr[p//2])/2
+    s=len(l2)
+    if(s%2==0):
+        Q1=(l2[(s//2)-1] + l2[s//2])/2
+        Q3=(l3[(s//2)-1] + l3[s//2])/2    
+    else:
+        Q1=l2[(s-1)//2]
+        Q3=l3[(s-1)//2]
+    l4=[Q1,Q2,Q3]
+    return l4
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(raw_input().strip())
+
+    data = map(int, raw_input().rstrip().split())
+
+    res = quartiles(data)
+
+    fptr.write('\n'.join(map(str, res)))
+    fptr.write('\n')
+
+    fptr.close()
