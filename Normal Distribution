@@ -1,0 +1,12 @@
+import math
+x=list(map(int,input().split()))
+y=float(input())
+x1=list(map(int,input().split()))
+X=(y-x[0])/(x[1]*math.sqrt(2))
+X1=(x1[1]-x[0])/(x[1]*math.sqrt(2))
+X2=(x1[0]-x[0])/(x[1]*math.sqrt(2))
+Px1=0.5*(1+ math.erf(X))
+Px2=0.5*(1+ math.erf(X1))-0.5*(1+ math.erf(X2))
+print(format(Px1,".3f"))
+print(format(Px2,".3f"))
+        
