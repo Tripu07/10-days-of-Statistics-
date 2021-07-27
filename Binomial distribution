@@ -1,0 +1,20 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+def fact(n):
+    Fact=1
+    for i in range(1,n+1):
+        Fact=Fact*i
+    return Fact
+x=list(map(float,input().split()))
+def nc(p,q):
+    N=fact(p)
+    X=fact(q)*fact(p-q)
+    return N/X
+r=(x[0]/(sum(x)))
+s=1-r
+l1=[]
+for i in range(3,7):
+    Px=nc(6,i)*pow(r,i)*pow(s,6-i)
+    l1.append(Px)
+Sum=sum(l1)
+print(format(Sum,".3f"))
