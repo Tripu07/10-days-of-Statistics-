@@ -1,0 +1,31 @@
+#!/bin/python
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'stdDev' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def stdDev(arr):
+    p=len(arr)
+    Sum=sum(arr)
+    Mean=Sum/p
+    l1=[(i-Mean)**(2)  for i in arr]
+    Sum1=sum(l1)
+    std=format(math.sqrt(Sum1/p),".1f")
+    print(std)        
+    
+    
+
+if __name__ == '__main__':
+    n = int(raw_input().strip())
+
+    vals = map(int, raw_input().rstrip().split())
+
+    stdDev(vals)
