@@ -1,0 +1,11 @@
+import math
+n1=list(map(int,input().split()))
+x=int(input())
+p=(n1[0]/n1[1])
+q=1-p
+L1=[]
+for i in range(1,x+1):
+    Px=pow(q,i-1)*p
+    L1.append(Px)
+Px1=sum(L1)
+print(format(Px1,".3f"))
