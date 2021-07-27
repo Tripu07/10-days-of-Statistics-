@@ -1,0 +1,11 @@
+ur code here. Read input from STDIN. Print output to STDOUT
+import math
+n=int(input())
+n1=int(input())
+Mean1=float(input())
+sd1=float(input())
+Mean2=Mean1*n1
+sd2=sd1*math.sqrt(n1)
+X=(n-Mean2)/(sd2*math.sqrt(2))
+Px=(0.5*(1+math.erf(X)))
+print(format(Px,".4f")
